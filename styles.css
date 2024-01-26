@@ -54,6 +54,12 @@ body {
     min-height: 75%;
   }
 
+  .external-link {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+
   #home {
     background-color: bisque;
   }
