@@ -25,7 +25,7 @@ body {
   }
   
   nav {
-    top: 10%; /* Adjust the top position based on the header height */
+    top: 10%;
     min-height: 5%;
   }
   
@@ -50,8 +50,16 @@ body {
   section {
     overflow: hidden;
     transition: height 0.5s ease;
-    padding-top: 15%; /* Adjust the padding top to make content visible below the fixed header and nav */
+    padding-top: 15%; 
     min-height: 75%;
+  }
+
+  #home {
+    background-color: bisque;
+  }
+
+  #about {
+    background-color: azure;
   }
   
   footer {
