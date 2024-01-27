@@ -19,8 +19,8 @@
     <!-- nav -->
     <nav>
       <ul>
-        <li><a href="#home" onclick="toggleSection('home')">Home</a></li>
-        <li><a href="#about" onclick="toggleSection('about')">About</a></li>
+        <li><a href="#home" id="home" onclick="toggleSection('home')">Home</a></li>
+        <li><a href="#about" id="about" onclick="toggleSection('about')">About</a></li>
       </ul>
     </nav>
     <!-- section 1 -->
@@ -39,11 +39,18 @@
   </main>
   <!-- footer -->
   <footer>
-    <a href="https://www.linkedin.com/in/camrylands/">Linkedin</a>
-    <a href="https://github.com/cameronrylands">github</a>
+    <div>
+      <a href="https://www.linkedin.com/in/camrylands/" target="_blank">Linkedin</a>
+      <i class="fa-brands fa-linkedin"></i>
+    </div>
+    <div>
+      <a href="https://github.com/cameronrylands" target="_blank">GitHub</a>
+      <i class="fa-brands fa-github"></i>
+    </div>
   </footer>
 </body>
 
 <script src="script.js"></script>
+<script src="https://kit.fontawesome.com/4604a8ea05.js" crossorigin="anonymous"></script>
 
 </html>
