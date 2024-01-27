@@ -67,6 +67,12 @@ body {
   #about {
     background-color: azure;
   }
+
+  #scg {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+  }
   
   footer {
     background-color: #333;
