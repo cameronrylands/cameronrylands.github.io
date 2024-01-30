@@ -153,8 +153,9 @@ div p{
 
 div img {
   width: 400px;
-  animation: borderTransition 10s infinite linear; /* Adjust the duration and timing function as needed */
   border: 2px solid;
+  animation: borderTransition 10s infinite linear;
+  -webkit-animation: borderTransition 10s infinite linear;
 }
 
 /* --------------------------nav----------------------- */
