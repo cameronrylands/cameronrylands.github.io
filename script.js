@@ -8,13 +8,3 @@ function toggleSection(sectionId) {
     }
   });
 }
-
-function toggleSection(sectionId) {
-  var items = document.querySelectorAll('nav ul li a');
-  items.forEach(function (item) {
-    item.classList.remove('active');
-  });
-
-  var clickedItem = document.getElementById(sectionId);
-  clickedItem.classList.add('active');
-}
