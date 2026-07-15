@@ -1,215 +1,63 @@
-/* Modern Reset & Base Variables */
-:root {
-  --bg-color: #0f172a;       /* Deep slate/charcoal background */
-  --card-bg: #1e293b;        /* Slightly lighter slate for elements */
-  --text-main: #f8fafc;      /* Crisp white for headings */
-  --text-muted: #94a3b8;     /* Soft gray for paragraphs */
-  --accent: #38bdf8;         /* Modern bright sky blue for links/highlights */
-  --accent-hover: #7dd3fc;
-  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
+/* ---------------- Home Section & Grid Layout ---------------- */
+#home {
+  background: transparent; /* Removes old background */
+  border: none;            /* Removes outer container border if preferred */
   padding: 0;
-}
-
-body {
-  font-family: var(--font-stack);
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.6;
-}
-
-/* ---------------- Header & Navigation ---------------- */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px 20px 20px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  font-weight: 800;
-  margin-bottom: 5px;
-}
-
-header a {
-  text-decoration: none;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-header a:hover {
-  color: var(--accent-hover);
-}
-
-nav {
-  margin: 20px 0 40px 0;
-}
-
-nav ul {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-  justify-content: center;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-weight: 500;
-  padding: 8px 24px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-}
-
-nav a:hover {
-  color: var(--text-main);
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-/* Active Page State */
-#home.active, #about.active,
-nav a:focus {
-  background-color: var(--card-bg);
-  color: var(--text-main);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ---------------- Main Content Layout ---------------- */
-main {
-  flex: 1;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Profile / Info Container */
-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap; /* Wraps cleanly on smaller screens */
   margin-top: 20px;
 }
 
-div p {
-  max-width: 450px;
-  font-size: 1.15rem;
-  color: var(--text-muted);
+/* Parent container holding all the project cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
 }
 
-/* Project / Section Elements */
-section {
+/* Individual modern blue card design */
+.project-card {
+  background-color: rgba(56, 189, 248, 0.08); /* Soft translucent light-blue fill */
+  border: 1px solid rgba(56, 189, 248, 0.25); /* Subtle blue border */
+  border-radius: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.3s ease;
 }
 
-section p {
-  color: var(--text-muted);
-  text-align: center;
-  max-width: 600px;
+/* Soft glow and lift effect when hovering over a card */
+.project-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(56, 189, 248, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.15);
 }
 
-.external-link {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.external-link:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
-}
-
-/* ---------------- Morphing Image Animation ---------------- */
-@keyframes borderTransition {
-  0%, 100% {
-    border-radius: 73% 27% 74% 26% / 26% 45% 55% 74%;
-  }
-  25% {
-    border-radius: 30% 70% 50% 50% / 70% 20% 80% 30%;
-  }
-  50% {
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-  }
-  75% {
-    border-radius: 70% 30% 20% 80% / 40% 60% 80% 20%;
-  }
-}
-
-div img, section img {
-  width: 280px;
-  height: 280px;
+/* Image styling scoped strictly within your cards */
+.project-card img {
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border: 3px solid var(--accent);
   animation: borderTransition 10s infinite linear;
 }
 
-/* ---------------- Footer ---------------- */
-footer {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 20px;
-  margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-footer div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-}
-
-footer a {
+/* Link styling inside cards */
+.project-card .external-link {
+  color: var(--accent);
   text-decoration: none;
-  color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 0.5px;
   transition: color 0.2s ease;
 }
 
-footer a:hover {
-  color: var(--accent);
-}
-
-footer i {
-  color: var(--text-muted);
-}
-
-
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-  div {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  header h1 {
-    font-size: 2rem;
-  }
+.project-card .external-link:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
 }
